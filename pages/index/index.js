@@ -114,21 +114,21 @@ Page({
       }
     })
   },
-  changeClass(){
-    // console.log('ss')
-    wx.navigateTo({
-      url: '/pages/myClasses/myClasses'
-    })
-  },
-  hideModal() {
-    this.setData({ showModal: false })
-  },
-  navToMyInfo() {
-    wx.navigateTo({
-      url: '../bind/bind',
-    })
-    this.hideModal()
-  },
+  // changeClass(){
+  //   // console.log('ss')
+  //   wx.navigateTo({
+  //     url: '/pages/myClasses/myClasses'
+  //   })
+  // },
+  // hideModal() {
+  //   this.setData({ showModal: false })
+  // },
+  // navToMyInfo() {
+  //   wx.navigateTo({
+  //     url: '../bind/bind',
+  //   })
+  //   this.hideModal()
+  // },
 
 
       // 订阅消息
@@ -140,4 +140,9 @@ Page({
   //     appId: 'wx47c1fa6cacac377e',
   //   })
   // }
+  checkin() {
+    wx.navigateTo({
+      url: '../inform/inform',
+    })
+  }
 })

@@ -7,6 +7,8 @@ module.exports = {
 
   AuthLoginByWeixin: ApiRootUrl + 'auth/loginByWeixin', //微信登录
   Userinfochange: ApiRootUrl + 'auth/school', //绑定学号
+  Userinfocheck: ApiRootUrl + 'auth/schoolCheck', //初始化学号
+  play: ApiRootUrl + 'auth/play', //打卡提交
 
   GoodsCount: ApiRootUrl + 'goods/count',  //统计商品总数
   GoodsList: ApiRootUrl + 'goods/list',  //获得商品列表

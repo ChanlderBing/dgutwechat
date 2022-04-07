@@ -8,10 +8,7 @@ Page({
   data: {
     res: {},
     userInfo: {},
-    hasUserInfo: false,
-    canIUse: false,
-    canIUseGetUserProfile: false,
-    canIUseOpenData: false // 如需尝试获取用户信息可改为false
+    hasUserInfo: false
   },
   // 事件处理函数
   changeInfo() {
@@ -20,22 +17,21 @@ Page({
     })
   },
   onLoad() {
-    if (wx.getUserProfile) {
+    if (wx.getStorageSync('userInfo')) {
       this.setData({
-        canIUseGetUserProfile: true
+        userInfo: wx.getStorageSync('userInfo')
       })
     }
   },
   getUserProfile(e) {
-    
     wx.getUserProfile({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        console.log(res);
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true,
         })
+        wx.setStorageSync('userInfo', res.userInfo);
         this.loginByWeixin()
       }
     })
@@ -52,8 +48,6 @@ Page({
         //登录远程服务器
         util.request(api.AuthLoginByWeixin, { code: code, userInfo: res }, 'POST').then(res => {
           if (res.errno === 0) {
-            //存储用户信息
-            wx.setStorageSync('userInfo', res.data.userInfo);
             wx.setStorageSync('token', res.data.token);
             resolve(res);
           } else {

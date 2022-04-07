@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/me/me",
-        "pages/myInfo/myInfo"
+        "pages/myInfo/myInfo",
+        "pages/inform/inform"
     ],
     "tabBar": {
         "list": [

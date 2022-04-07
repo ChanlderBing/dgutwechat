@@ -31,7 +31,6 @@ function request(url, data = {}, method = "GET") {
         console.log("success");
 
         if (res.statusCode == 200) {
-
           if (res.data.errno == 401) {
             //需要登录后才可以操作
 

@@ -1,0 +1,52 @@
+<!--pages/inform/inform.wxml-->
+<block>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text>
+    <text class="text-xl text-bold">健康填报</text>
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title">上次核酸时间</view>
+  <picker mode="date" bindchange="changeTime" data-index="{{index}}" data-time="{{time}}">
+    <view class="picker">
+      {{last_time || '请选择'}}
+    </view>
+  </picker>
+</view>
+
+<view class="cu-form-group">
+  <view class="title">今日体温</view>
+  <view style="float: right;">
+    <input style="width: 80rpx;" placeholder="体温" type="digit" model:value="{{ temp }}" name="temp"></input>
+</view>
+</view>
+
+<view class="cu-form-group">
+  <view class="title">健康码是否为绿色</view>
+  <picker bindchange="changeGreen" value="{{index}}" range="{{isStay}}">
+    <view class="picker">
+      {{ is_green || '请选择'}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">是否去过高/中风险所在市</view>
+  <picker bindchange="changeStay" value="{{index}}" range="{{isStay}}"
+    >
+    <view class="picker">
+      {{ is_stay || '请选择'}}
+    </view>
+  </picker>
+</view>
+</block>
+
+<view class="cu-form-group margin-top">
+  <view class="title">位置</view>
+  <input placeholder="未知" value="{{ location }}" disabled></input>
+  <button class="cu-btn bg-green shadow" bindtap="getLocation" wx:if="{{ !location}}">点击获取</button>
+</view>
+
+<view class="cu-bar btn-group margin-top margin-bottom">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="submit">提交</button>
+</view>

@@ -15,6 +15,19 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      console.log(options);
+      util.request(api.Userinfocheck,{}, 'GET').then(res => {
+        console.log(res);
+        if (res.errno === 0) {
+          this.setData({
+            myinfo: res.data
+          })
+        } else {
+          reject(res);
+        }
+      }).catch((err) => {
+        reject(err);
+      });
 
     },
 
@@ -68,16 +81,18 @@ Page({
     },
     setMyInfo(e) {
         util.request(api.Userinfochange, { userInfo: e.detail.value }, 'POST').then(res => {
+          console.log(res);
             if (res.errno === 0) {
-              //存储用户信息
-              wx.setStorageSync('userInfo', res.data.userInfo);
-              wx.setStorageSync('token', res.data.token);
-              resolve(res);
+              wx.showToast({
+                title: '修改成功',
+                icon: '',   
+                duration: 2000,      //停留时间
+              })
             } else {
-              reject(res);
+              console.log(11);
             }
           }).catch((err) => {
-            reject(err);
+            
           });
       },
 })

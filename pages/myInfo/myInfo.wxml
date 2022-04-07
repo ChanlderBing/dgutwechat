@@ -4,18 +4,18 @@
 <!--   </picker> -->
   <view class='con'>
     <label>学号：</label>
-    <input type='number'  value='{{ myinfo.schoolId }}' maxlength='12' name='schoolId'></input>
+    <input type='number'  disabled="{{myinfo.schoolId ? true : false }}" value='{{ myinfo.schoolId }}'  maxlength='12' name='schoolId'></input>
   </view>
   <view class='con'>
     <label>姓名：</label>
-    <input type='text'  value='{{ myinfo.nickname }}' maxlength='11' name='nickname'></input>
+    <input type='text'  disabled="{{myinfo.nickname ? true : false }}" value='{{ myinfo.nickname }}' maxlength='11' name='nickname'></input>
   </view>
   <view class='con'>
     <label>班级：</label>
-    <input type='text'  value='{{ myinfo.class }}' maxlength='11' name='class'></input>
+    <input type='text'  disabled="{{myinfo.class ? true : false }}" value='{{ myinfo.class }}' maxlength='30' name='class'></input>
   </view>
  
-  <button form-type='submit'>保存</button>
+  <button form-type='submit' disabled="{{myinfo.schoolId && myinfo.schoolId && myinfo.class ? true : false }}">保存</button>
 </form>
 <view class="mark">
   数据由学校提供
