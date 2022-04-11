@@ -14,7 +14,7 @@
     <label>班级：</label>
     <input type='text'  disabled="{{myinfo.class ? true : false }}" value='{{ myinfo.class }}' maxlength='30' name='class'></input>
   </view>
- 
+  <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
   <button form-type='submit' disabled="{{myinfo.schoolId && myinfo.schoolId && myinfo.class ? true : false }}">保存</button>
 </form>
 <view class="mark">

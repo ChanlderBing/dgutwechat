@@ -8,6 +8,11 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+.sl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 @import "colorui/main.wxss";
 @import "colorui/icon.wxss";

@@ -28,8 +28,7 @@ Page({
       desc: '展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true,
+          userInfo: res.userInfo
         })
         wx.setStorageSync('userInfo', res.userInfo);
         this.loginByWeixin()
@@ -49,6 +48,7 @@ Page({
         util.request(api.AuthLoginByWeixin, { code: code, userInfo: res }, 'POST').then(res => {
           if (res.errno === 0) {
             wx.setStorageSync('token', res.data.token);
+            wx.setStorageSync('logtime',Date.now())
             resolve(res);
           } else {
             reject(res);

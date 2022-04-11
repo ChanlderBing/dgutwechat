@@ -4,7 +4,7 @@
 <view class="padding">
   <view class="card shadow bg-white" bindtap="checkin">
     <view class="content">
-      <view class="text-left padding text-lg">今日打卡，{{hours}}:{{minutes}}截止</view>
+      <view class="text-left padding text-lg">今日打卡，23:00截止</view>
       <view class="text-right padding text-xxl">
         {{ checked ? '已完成' : '未完成' }}
       </view>
@@ -25,17 +25,13 @@
     <text class="cuIcon-title text-orange"></text> 学院通知
   </view>
 </view>
-<view class="cu-list menu card-menu margin-top">
-  <view class="cu-item arrow" bindtap="showGroup" data-class_="{{ userInfo.class_ }}">
-    <view class="content">
-      <text>查看班级体温信息</text>
+<view class="cu-list menu card-menu margin-top " wx:for="{{inform}}" wx:key="item.id">
+  <view class="cu-item arrow" bindtap="">
+    <view class="content sl">
+      <text>{{item.title}}</text>
     </view>
-  </view>
-</view>
-<view class="cu-list menu card-menu margin-top">
-  <view class="cu-item arrow" bindtap="showGroup" data-class_="{{ userInfo.class_ }}">
-    <view class="content">
-      <text>查看班级体温信息</text>
+    <view style="color:grey;">
+      <text>{{item.informTime}}</text>
     </view>
   </view>
 </view>

@@ -14,3 +14,8 @@ button {
   height: 386rpx;
   z-index: 0;
 }
+.sl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,3 +1,6 @@
+const { SchoolInformCheck } = require("../../config/api");
+const util = require("../../utils/util")
+
 const app = getApp()
 // const db = wx.cloud.database()
 // const tmpId = 'XWI3rT3Sfi6fdjZ0YeHkwp_POCU_tmrOOr96tSsN_ks'
@@ -13,14 +16,22 @@ Page({
     showModal: false,
     allClasses: [],
     checked: false,
-    name:'name1'
+    inform:[]
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-    
+    util.request(SchoolInformCheck).then(res =>{
+      if (res.errno === 0) {
+        this.setData({
+          inform: res.data
+        })
+      }
+    }).catch(res =>{
+
+    })
     // wx.showLoading({
     //   title: '正在加载',
     // })
@@ -38,12 +49,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // if(app.globalData.userInfo.id) {
-    //   this.setData({
-    //     checked: app.globalData.userInfo.last_checkin_at.toDateString() === new Date().toDateString(),
-    //     userInfo: app.globalData.userInfo
-    //   })
-    // }
+    if (wx.getStorageSync('token')) {
+      console.log(wx.getStorageSync('is_play'));
+      this.setData({
+        checked: new Date().toLocaleDateString() != wx.getStorageSync('is_play') ? false :true
+      }) 
+    }
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -141,8 +152,14 @@ Page({
   //   })
   // }
   checkin() {
+    if (this.data.checked) {
+      wx.showToast({
+        title: '今日打卡已完成',
+      })
+    }else{
     wx.navigateTo({
       url: '../inform/inform',
     })
+  }
   }
 })

@@ -147,6 +147,7 @@ Page({
                 last_time: last_time
             }
             util.request(api.play,{inform: inform},'POST').then(res=>{
+                wx.setStorageSync('is_play', new Date().toLocaleDateString())
                 wx.showToast({
                     title: '打卡成功',
                     icon: '',

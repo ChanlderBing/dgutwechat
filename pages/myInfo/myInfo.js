@@ -1,21 +1,28 @@
 // pages/myInfo.js
 const util = require('../../utils/util');
 const api = require('../../config/api.js');
+const drawQrcode = require('../../utils/weapp.qrcode.js')
 
 Page({
 
     /**
-     * 页面的初始数据
+     * 页面的初始数据S
      */
     data: {
-        myinfo:{}
+        myinfo:{},
+        yinfo:{
+        a:'什么东西',
+        b:'aaaa'
+        }
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      console.log(options);
+      console.log(api);
+      console.log(drawQrcode);
+      this.draw()
       util.request(api.Userinfocheck,{}, 'GET').then(res => {
         console.log(res);
         if (res.errno === 0) {
@@ -35,7 +42,6 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
     },
 
     /**
@@ -78,6 +84,26 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    draw(){
+      drawQrcode({
+        width: 200,
+        height: 200,
+        canvasId: 'myQrcode',
+        // ctx: wx.createCanvasContext('myQrcode'),
+        text: `http://192.168.1.7:8360/api/auth/Check?inform=${this.data.yinfo.a}`,
+        // v1.0.0+版本支持在二维码上绘制图片
+        // image: {
+        //   imageResource: '../../images/me.png',
+        //   dx: 70,
+        //   dy: 70,
+        //   dWidth: 60,
+        //   dHeight: 60
+        // }
+        callback:function (e) {
+          console.log(e);
+        }
+      })
     },
     setMyInfo(e) {
         util.request(api.Userinfochange, { userInfo: e.detail.value }, 'POST').then(res => {

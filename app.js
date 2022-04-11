@@ -5,14 +5,11 @@ App({
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        console.log(111);
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    let lasttime = wx.getStorageSync('logtime')
+    if (Date.now() - lasttime >= 86400000) {
+      wx.removeStorageSync('token')
+      wx.removeStorageSync('userInfo')
+    }
   },
   globalData: {
     userInfo: null

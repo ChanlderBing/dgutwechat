@@ -33,14 +33,14 @@
 <view class="cu-list menu card-menu margin-top">
   <view class="cu-item arrow" bindtap="changeInfo">
     <view class="content">
-      <text>身份绑定</text>
+      <text>学号绑定</text>
     </view>
   </view>
 </view>
 <view class="cu-list menu card-menu margin-top">
   <view class="cu-item arrow" bindtap="changeInfo">
     <view class="content">
-      <text>打开记录</text>
+      <text>打卡记录</text>
     </view>
   </view>
 </view>
