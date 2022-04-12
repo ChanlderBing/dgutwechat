@@ -1,0 +1,46 @@
+<!--pages/inform/inform.wxml-->
+<block>
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-green"></text>
+    <text class="text-xl text-bold">出校申请</text>
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title">姓名</view>
+  <input type="text" value="{{setform.nickname}}"/>
+</view>
+
+<view class="cu-form-group">
+  <view class="title">出校时间</view>
+  <picker mode="date" bindchange="changeGreen" value="{{index}}" range="{{isStay}}">
+    <view class="picker">
+      {{ is_green || '请选择'}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">回校时间</view>
+  <picker mode="date" bindchange="changeStay" value="{{index}}" range="{{isStay}}"
+    >
+    <view class="picker">
+      {{ is_stay || '请选择'}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">申请原因</view>
+  <textarea style="width: 80rpx;" placeholder="请在此输入"  model:value="{{ temp }}" name="temp"></textarea>
+</view>
+</block>
+
+<view class="cu-form-group margin-top">
+  <view class="title">申请资格</view>
+  <input placeholder="未知" value="{{ location }}" disabled></input>
+  <button class="cu-btn bg-green shadow" bindtap="getLocation" wx:if="{{ !location}}">点击获取</button>
+</view>
+
+<view class="cu-bar btn-group margin-top margin-bottom">
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="submit">发起出校申请</button>
+  <button class="cu-btn bg-green shadow-blur round lg" bindtap="submit">生成出校码</button>
+</view>

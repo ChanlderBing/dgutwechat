@@ -4,7 +4,8 @@
         "pages/logs/logs",
         "pages/me/me",
         "pages/myInfo/myInfo",
-        "pages/inform/inform"
+        "pages/inform/inform",
+        "pages/schoolOut/schoolOut"
     ],
     "tabBar": {
         "list": [
@@ -13,6 +14,12 @@
                 "text": "打卡",
                 "iconPath": "images/checkin.png",
                 "selectedIconPath": "images/checkin_fill.png"
+            },
+            {
+                "pagePath": "pages/schoolOut/schoolOut",
+                "text": "出校申请",
+                "iconPath": "images/me.png",
+                "selectedIconPath": "images/me_fill.png"
             },
             {
                 "pagePath": "pages/me/me",
