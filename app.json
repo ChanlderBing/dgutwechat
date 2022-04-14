@@ -5,7 +5,8 @@
         "pages/me/me",
         "pages/myInfo/myInfo",
         "pages/inform/inform",
-        "pages/schoolOut/schoolOut"
+        "pages/schoolOut/schoolOut",
+        "pages/qrcodeShow/qrcodeShow"
     ],
     "tabBar": {
         "list": [

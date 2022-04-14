@@ -1,4 +1,4 @@
-const ApiRootUrl = 'http://127.0.0.1:8360/api/';
+const ApiRootUrl = 'http://192.168.1.7:8360/api/';
 
 module.exports = {
   IndexUrl: ApiRootUrl + 'index/index', //首页数据接口
@@ -10,6 +10,11 @@ module.exports = {
   Userinfocheck: ApiRootUrl + 'auth/schoolCheck', //初始化学号
   play: ApiRootUrl + 'auth/play', //打卡提交
   SchoolInformCheck: ApiRootUrl + 'auth/schoolInformCheck', //学院通知查询
+  SchoolOutInformCheck: ApiRootUrl + 'auth/schoolOutInformCheck',
+  apply:ApiRootUrl + 'auth/apply',
+  qrcode:ApiRootUrl + 'auth/qrcode',
+  qrcodeCheck:ApiRootUrl + 'auth/qrcodeCheck',
+  qrcodeExprieCheck:ApiRootUrl + 'auth/qrcodeExprieCheck',
 
   GoodsCount: ApiRootUrl + 'goods/count',  //统计商品总数
   GoodsList: ApiRootUrl + 'goods/list',  //获得商品列表
@@ -48,19 +53,7 @@ module.exports = {
   SearchResult: ApiRootUrl + 'search/result',  //搜索数据
   SearchHelper: ApiRootUrl + 'search/helper',  //搜索帮助
   SearchClearHistory: ApiRootUrl + 'search/clearhistory',  //搜索帮助
-
-  AddressList: ApiRootUrl + 'address/list',  //收货地址列表
-  AddressDetail: ApiRootUrl + 'address/detail',  //收货地址详情
-  AddressSave: ApiRootUrl + 'address/save',  //保存收货地址
-  AddressDelete: ApiRootUrl + 'address/delete',  //保存收货地址
-
-  RegionList: ApiRootUrl + 'region/list',  //获取区域列表
-
-  OrderList: ApiRootUrl + 'order/list',  //订单列表
-  OrderDetail: ApiRootUrl + 'order/detail',  //订单详情
-  OrderCancel: ApiRootUrl + 'order/cancel',  //取消订单
-  OrderExpress: ApiRootUrl + 'order/express', //物流详情
-
+  
   FootprintList: ApiRootUrl + 'footprint/list',  //足迹列表
   FootprintDelete: ApiRootUrl + 'footprint/delete',  //删除足迹
 };

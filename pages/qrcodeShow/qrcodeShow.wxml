@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="main">
+    <view class="qrcode item">
+      <view style="font-weight: bold;font-size: large;">{{way === 'qrcodeDsy' ? '出校码': '返校码' }}</view>
+      <canvas style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
+      <view class="tips">提示</view>
+    </view>
+  </view>
+</view>
