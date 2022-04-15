@@ -6,7 +6,8 @@
         "pages/myInfo/myInfo",
         "pages/inform/inform",
         "pages/schoolOut/schoolOut",
-        "pages/qrcodeShow/qrcodeShow"
+        "pages/qrcodeShow/qrcodeShow",
+        "pages/personal/personal"
     ],
     "tabBar": {
         "list": [
@@ -17,8 +18,8 @@
                 "selectedIconPath": "images/checkin_fill.png"
             },
             {
-                "pagePath": "pages/schoolOut/schoolOut",
-                "text": "出校申请",
+                "pagePath": "pages/personal/personal",
+                "text": "个人事务",
                 "iconPath": "images/me.png",
                 "selectedIconPath": "images/me_fill.png"
             },

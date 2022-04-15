@@ -47,6 +47,15 @@ Page({
                             buttonSwith: 5
                         })
                     }
+                }).then(res1 =>{
+                    util.request(qrcodeExprieCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res =>{
+                        if (res.errno === 0 && res.data.isBack === '2') {
+                            wx.removeStorageSync('qrcodeId')
+                            this.setData({
+                                
+                            })
+                        }
+                    })
                 })   
             }
         } else {

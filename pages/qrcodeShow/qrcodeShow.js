@@ -16,7 +16,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.draw(options.id)
         util.request(api.qrcodeExprieCheck,{qrcodeId:options.id}).then(res =>{
             if (res.errno === 0) {
                 if (res.data.isGo === '1') {
@@ -29,6 +28,9 @@ Page({
                     })
                 }
             }
+            return
+        }).then(res => {
+            this.draw(options.id)
         })
     },
 
@@ -80,12 +82,14 @@ Page({
 
     },
     draw(qrcodeId) {
+        let way = this.data.way
+        console.log(this.data.way);
         drawQrcode({
             width: 200,
             height: 200,
             canvasId: 'myQrcode',
             // ctx: wx.createCanvasContext('myQrcode'),
-            text: `http://192.168.1.7:8360/api/auth/${this.data.way}?qrcodeId=${qrcodeId}`,
+            text: `http://192.168.1.7:8360/api/auth/${way}?qrcodeId=${qrcodeId}`,
         })
     }
 })

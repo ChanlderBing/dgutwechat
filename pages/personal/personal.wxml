@@ -1,0 +1,13 @@
+<!--pages/personal/personal.wxml-->
+<view class="all">
+    <view class="head">
+    <view class="list">1</view>
+    <view class="list">1</view>
+    <view class="list">1</view>
+    <view class="list">1</view>
+    <view class="list">1</view>
+    <view class="list">1</view>
+    </view>
+    <view class="mid">dasdas</view>
+    <view class="main"></view>
+</view>

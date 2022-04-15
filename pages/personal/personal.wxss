@@ -1,0 +1,27 @@
+/* pages/personal/personal.wxss */
+page{
+    height: 100%;
+}
+.all{
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+}
+.head{
+    height:300rpx;
+    width: 100%;
+    display: flex;
+}
+.mid{
+    height:300rpx;
+    width: 100%;
+}
+.main{
+    flex: 1;
+    width: 100%;
+}
+.list {
+    width: 30px;
+    height: 50px;
+    padding: 20px;
+}
