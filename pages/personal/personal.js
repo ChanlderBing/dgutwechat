@@ -62,5 +62,10 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    gotoSchoolOut(){
+        wx.navigateTo({
+          url: '../schoolOut/schoolOut',
+        })
     }
 })

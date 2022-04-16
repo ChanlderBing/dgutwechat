@@ -22,6 +22,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        if (wx.getStorageSync('userInfo')) {
+            this.setData({
+                'setForm.nickname': wx.getStorageSync('userInfo').nickName,
+            })
+        } else {
+            // wx.showModal
+        }
        
     },
 
@@ -36,31 +43,32 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        if (wx.getStorageSync('userInfo')) {
-            this.setData({
-                'setForm.nickname': wx.getStorageSync('userInfo').nickName,
-            })
-            if (wx.getStorageSync('qrcodeId')) {
-                util.request(api.qrcodeCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res=>{
-                    if (res.errno === 0 && res.data.canGo === '1') {
-                        this.setData({
-                            buttonSwith: 5
-                        })
-                    }
-                }).then(res1 =>{
-                    util.request(qrcodeExprieCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res =>{
-                        if (res.errno === 0 && res.data.isBack === '2') {
-                            wx.removeStorageSync('qrcodeId')
-                            this.setData({
-                                
-                            })
-                        }
+        if (wx.getStorageSync('qrcodeId')) {
+            util.request(api.qrcodeCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res=>{
+                if (res.errno === 0 && res.data.canGo === '1') {
+                    this.setData({
+                        buttonSwith: 5
                     })
-                })   
-            }
-        } else {
-            // wx.showModal
+                } else if (res.data.canGo === '2') {
+                    this.setData({
+                        buttonSwith: 3
+                    })
+                }else if (res.data.canGo === '0') {
+                    this.setData({
+                        buttonSwith: 4
+                    })
+                }
+            }).then(res =>{
+                util.request(api.qrcodeExprieCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res =>{
+                    if (res.errno === 0) {
+                        if (res.data.isBack === '2') {
+                            wx.removeStorageSync('qrcodeId')
+                        }
+                    }
+                })
+            })   
         }
+        
     },
 
     /**
@@ -97,6 +105,12 @@ Page({
     onShareAppMessage: function () {
 
     },
+    checkInform() {
+        if (this.data.setForm.backTime && this.data.setForm.goTime && this.data.reason) {
+            return true
+        }
+        return false
+    },
     changeGoTime(e) {
         this.setData({
             'setForm.goTime': e.detail.value
@@ -115,22 +129,29 @@ Page({
      Textinput: function(){
      },
      getPassReason() {
-         util.request(api.SchoolOutInformCheck).then(res =>{
-             if (res.errno === 0) {
-                 this.setData({
-                     passReason: '              满足申请出校条件',
-                     buttonSwith: 1
-                 })
-             }else {
-                this.setData({
-                    passReason: '              未满足申请出校条件',
-                    buttonSwith: 2
-                })
-             }
-         })
+         if (this.checkInform()) {
+            util.request(api.SchoolOutInformCheck).then(res =>{
+                if (res.errno === 0) {
+                    this.setData({
+                        passReason: '              满足申请出校条件',
+                        buttonSwith: 1
+                    })
+                }else {
+                   this.setData({
+                       passReason: '              未满足申请出校条件',
+                       buttonSwith: 2
+                   })
+                }
+            })
+        } else {
+            wx.showToast({
+              title: '申请信息不完整',
+              icon: 'error'
+            })
+        }
      },
      submit() {
-         if (this.data.setForm.backTime && this.data.setForm.goTime && this.data.reason) {
+         if (this.checkInform) {
             if (this.data.buttonSwith === 1) {
                 this.setData({
                     'setForm.canGo': 2,
@@ -165,7 +186,7 @@ Page({
             }
         } else {
             wx.showToast({
-              title: '申请条件不完整',
+              title: '申请信息不完整',
               icon:'error'
             })
         }    

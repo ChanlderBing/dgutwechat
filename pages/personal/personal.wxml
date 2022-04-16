@@ -1,12 +1,20 @@
 <!--pages/personal/personal.wxml-->
 <view class="all">
-    <view class="head">
-    <view class="list">1</view>
-    <view class="list">1</view>
-    <view class="list">1</view>
-    <view class="list">1</view>
-    <view class="list">1</view>
-    <view class="list">1</view>
+    <view class="head bg-white solid-bottom">
+    <view class="list" bindtap="gotoSchoolOut">
+        <image  class="icon" src="/images/apply.png"></image>
+        <text class="title">出校申请</text>
+    </view>
+    <view class="list">
+        <image class="icon" src="/images/icon-covid.png"></image>
+        <text class="title">疫情资讯</text>
+    </view>
+    <view class="list">
+        <image class="icon" src="/images/icon-more.png"></image>
+        <text class="title">更多</text></view>
+    <view class="list"></view>
+    <view class="list"></view>
+    <view class="list"></view>
     </view>
     <view class="mid">dasdas</view>
     <view class="main"></view>

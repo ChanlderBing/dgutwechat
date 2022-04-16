@@ -20,8 +20,8 @@
             {
                 "pagePath": "pages/personal/personal",
                 "text": "个人事务",
-                "iconPath": "images/me.png",
-                "selectedIconPath": "images/me_fill.png"
+                "iconPath": "images/icon-market.png",
+                "selectedIconPath": "images/icon-market.png"
             },
             {
                 "pagePath": "pages/me/me",
