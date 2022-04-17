@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "i-panel": "../../iview/panel/index"
+    "i-panel": "../../iview/panel/index",
+    "i-tabs": "../../iview/tabs/index",
+    "i-tab": "../../iview/tab/index"
   }
 }

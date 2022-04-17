@@ -16,6 +16,45 @@
     <view class="list"></view>
     <view class="list"></view>
     </view>
-    <view class="mid">dasdas</view>
-    <view class="main"></view>
+    <view class="mid bg-white">
+        <view class="applyList" style="border-right: .5rpx solid gainsboro">
+            <text class="textapply">办理中的业务</text>
+            <text class="numapply">30 个</text>
+        </view>
+        <view class="applyList">
+            <text class="textapply">已经结束的业务</text>
+            <text class="numapply">30 个</text>
+        </view>
+    </view>
+    <view class="main">
+        <view class="mainHead  bg-white">
+            <i-tabs current="{{ current }}" bindchange="handleChange">
+                <i-tab key="tab1" title="办理中"></i-tab>
+                <i-tab key="tab2" title="已结束"></i-tab>
+            </i-tabs>
+        </view>
+        <view class="mainMain">
+            <view class="mainList bg-white">
+                <view class="mainListIcon"><image class="icon" src="/images/apply.png"></image>
+                    <view style="font-weight: bold;">出校申请</view></view>
+                <view class="mainListDetail">
+                    <view>申请时间：2021-12-18</view>
+                    <view>出校时间：2021-12-18----2021-12-</view>
+                    <view class="reason">
+                        <view style="">申请理由：</view>
+                        <view class="reasonsl" style="width: 64%;height: 80rpx;">出学校吃顶学校吃顶学校吃顶学校吃顶妈妈妈妈码骂什么萨达姆</view>
+                    </view>
+                </view>
+                <view class="mainListStatus">
+                查看二维码</view>
+            </view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+            <view class="mainList bg-white"></view>
+        </view>
+    </view>
 </view>

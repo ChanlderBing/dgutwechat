@@ -14,16 +14,37 @@ page{
     display: flex;
     flex-wrap: wrap;
     justify-content:center;
-    margin: 30rpx;
+    margin: 30rpx 0;
     border-radius: 30rpx;
 }
 .mid{
-    height:380rpx;
+    height:130rpx;
+    margin-bottom: 30rpx;
     width: 100%;
+    display: flex;
+    border-radius: 30rpx;
+}
+.applyList{
+    width: 50%;
+}
+.textapply{
+    position: relative;
+    top: 35%;
+    left: 10%;
+    font-size: 30rpx;
+    font: gray;
+}
+.numapply {
+    position: relative;
+    top: 35%;
+    left: 22%;
+    font-weight: bold;
+    font-size: 32rpx;
 }
 .main{
     flex: 1;
-    width: 100%;
+    /* margin: 0 30rpx; */
+    border-radius: 30rpx;
 }
 .list {
     width: 170rpx;
@@ -42,4 +63,29 @@ page{
     padding: 16rpx;
     font-size: 28rpx;
     font-weight: bold;
+}
+.mainList{
+    height: 160rpx;
+    margin: 30rpx;
+    border-radius: 30rpx;
+    display: flex;
+}
+.mainListIcon {
+    margin: 20rpx 20rpx;
+    width: 18%;
+}
+.mainListDetail{
+    width: 63%;
+}
+.mainListStatus{
+    width: 18%;
+}
+.reason {
+    display: flex;
+}
+.reasonsl{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
 }

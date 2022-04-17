@@ -57,12 +57,19 @@ Page({
                     this.setData({
                         buttonSwith: 4
                     })
+                }else if (res.data.canGo === '3') {
+                    this.setData({
+                        buttonSwith:6
+                    })
                 }
             }).then(res =>{
                 util.request(api.qrcodeExprieCheck,{qrcodeId:wx.getStorageSync('qrcodeId')}).then(res =>{
                     if (res.errno === 0) {
                         if (res.data.isBack === '2') {
                             wx.removeStorageSync('qrcodeId')
+                            this.setData({
+                                buttonSwith: 0
+                            })
                         }
                     }
                 })
@@ -181,6 +188,7 @@ Page({
                 util.request(api.apply,{setForm: this.data.setForm},'POST').then(res => {
                     if (res.errno === 0) {
                         wx.setStorageSync('qrcodeId',res.data)
+                       
                     }
                 })
             }
