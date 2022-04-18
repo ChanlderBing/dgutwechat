@@ -18,13 +18,14 @@ page{
     border-radius: 30rpx;
 }
 .mid{
-    height:130rpx;
+    height: 130rpx;
     margin-bottom: 30rpx;
     width: 100%;
     display: flex;
     border-radius: 30rpx;
 }
 .applyList{
+    height: 130rpx;
     width: 50%;
 }
 .textapply{
@@ -65,8 +66,8 @@ page{
     font-weight: bold;
 }
 .mainList{
-    height: 160rpx;
-    margin: 30rpx;
+    height: 180rpx;
+    margin: 10rpx 0rpx;
     border-radius: 30rpx;
     display: flex;
 }

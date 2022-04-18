@@ -15,6 +15,7 @@ module.exports = {
   qrcode:ApiRootUrl + 'auth/qrcode',
   qrcodeCheck:ApiRootUrl + 'auth/qrcodeCheck',
   qrcodeExprieCheck:ApiRootUrl + 'auth/qrcodeExprieCheck',
+  applyCheck:ApiRootUrl + 'auth/applyCheck',
 
   GoodsCount: ApiRootUrl + 'goods/count',  //统计商品总数
   GoodsList: ApiRootUrl + 'goods/list',  //获得商品列表

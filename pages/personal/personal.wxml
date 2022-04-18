@@ -34,27 +34,23 @@
             </i-tabs>
         </view>
         <view class="mainMain">
-            <view class="mainList bg-white">
+            <view class="mainList bg-white" wx:for="{{applyList}}" wx:key="item.id">
                 <view class="mainListIcon"><image class="icon" src="/images/apply.png"></image>
                     <view style="font-weight: bold;">出校申请</view></view>
                 <view class="mainListDetail">
-                    <view>申请时间：2021-12-18</view>
-                    <view>出校时间：2021-12-18----2021-12-</view>
+                    <view>申请时间：{{item.applyTime}}</view>
+                    <view>出校时间：{{item.goTime}}</view>
+                    <view>返校时间：{{item.backTime}}</view>
                     <view class="reason">
-                        <view style="">申请理由：</view>
-                        <view class="reasonsl" style="width: 64%;height: 80rpx;">出学校吃顶学校吃顶学校吃顶学校吃顶妈妈妈妈码骂什么萨达姆</view>
+                        <view>申请理由：</view>
+                        <view class="reasonsl" style="width: 64%;height: 80rpx;">{{ item.reason}}</view>
                     </view>
                 </view>
                 <view class="mainListStatus">
                 查看二维码</view>
             </view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
-            <view class="mainList bg-white"></view>
+            <view wx:if="{{isMore}}">加载中</view>
+            <view wx:if="{{noMore}}">没有更多了</view>
         </view>
     </view>
 </view>
