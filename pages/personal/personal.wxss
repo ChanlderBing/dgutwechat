@@ -90,3 +90,32 @@ page{
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
+.green{
+    background-color: #19be6b;
+    color: white;
+    font-weight: bold;
+    font-size: 30rpx;
+    writing-mode:vertical-lr;
+}
+.blue {
+    background-color: #2d8cf0;
+    color: white;
+    font-weight: bold;
+    font-size: 36rpx;
+    writing-mode:vertical-lr;
+}
+
+.red {
+    background-color: #ed3f14;
+    color: white;
+    font-weight: bold;
+    font-size: 32rpx;
+    writing-mode:vertical-lr;
+}
+.dark {
+    background-color: #bbbec4;
+    color: white;
+    font-weight: bold;
+    font-size: 32rpx;
+    writing-mode:vertical-lr;
+}

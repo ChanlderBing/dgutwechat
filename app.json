@@ -36,9 +36,7 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "疫情校园",
         "navigationBarTextStyle": "black",
-        "enablePullDownRefresh": true,
-        "onReachBottomDistance": 300
+        "enablePullDownRefresh": true
     },
-    "style": "v2",
     "sitemapLocation": "sitemap.json"
 }

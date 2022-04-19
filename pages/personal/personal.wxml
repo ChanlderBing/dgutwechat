@@ -19,22 +19,19 @@
     <view class="mid bg-white">
         <view class="applyList" style="border-right: .5rpx solid gainsboro">
             <text class="textapply">办理中的业务</text>
-            <text class="numapply">30 个</text>
+            <text class="numapply">{{counting}} 个</text>
         </view>
         <view class="applyList">
             <text class="textapply">已经结束的业务</text>
-            <text class="numapply">30 个</text>
+            <text class="numapply">{{counted}} 个</text>
         </view>
     </view>
     <view class="main">
         <view class="mainHead  bg-white">
-            <i-tabs current="{{ current }}" bindchange="handleChange">
-                <i-tab key="tab1" title="办理中"></i-tab>
-                <i-tab key="tab2" title="已结束"></i-tab>
-            </i-tabs>
+            
         </view>
         <view class="mainMain">
-            <view class="mainList bg-white" wx:for="{{applyList}}" wx:key="item.id">
+            <view class="mainList bg-white"  wx:for="{{applyList}}" wx:key="{{item.id}}">
                 <view class="mainListIcon"><image class="icon" src="/images/apply.png"></image>
                     <view style="font-weight: bold;">出校申请</view></view>
                 <view class="mainListDetail">
@@ -46,11 +43,15 @@
                         <view class="reasonsl" style="width: 64%;height: 80rpx;">{{ item.reason}}</view>
                     </view>
                 </view>
-                <view class="mainListStatus">
-                查看二维码</view>
+                <view  style="text-align: center;" data-id="{{item.id}}" bindtap="gotoCode" wx:if="{{item.status === 0}}" class="{{ item.canGo === '0' ? 'blue,mainListStatus':'green,mainListStatus'}}" >
+                <text style="line-height: 120rpx;letter-spacing: 6rpx;">{{item.canGo === '0' ? '申请中':'查看二维码'}}</text>
+                </view>
+                <view  style="text-align: center;" wx:else class="{{ item.canGo === '3' ? 'red,mainListStatus':'dark,mainListStatus'}}" >
+                <text style="line-height: 120rpx;letter-spacing: 6rpx;">{{item.canGo === '3' ? '申请拒绝':'申请结束'}}</text>
+                </view>
             </view>
-            <view wx:if="{{isMore}}">加载中</view>
-            <view wx:if="{{noMore}}">没有更多了</view>
+            <i-spin custom  wx:if="{{isMore}}">加载中...</i-spin>
+            <i-load-more tip="没有更多数据"  wx:if="{{noMore}}" loading="{{ false }}" />
         </view>
     </view>
 </view>
