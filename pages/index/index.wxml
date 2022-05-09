@@ -25,7 +25,7 @@
     <text class="cuIcon-title text-orange"></text> 学院通知
   </view>
 </view>
-<view class="cu-list menu card-menu margin-top " wx:for="{{inform}}" wx:key="item.id">
+<view class="cu-list menu card-menu margin-top" wx:for="{{inform}}" wx:key="item.id">
   <view class="cu-item arrow" bindtap="">
     <view class="content sl">
       <text>{{item.title}}</text>

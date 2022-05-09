@@ -30,7 +30,7 @@ Page({
         this.setData({
           userInfo: res.userInfo
         })
-        wx.setStorageSync('userInfo', res.userInfo);
+        // wx.setStorageSync('userInfo', res.userInfo);
         this.loginByWeixin()
       }
     })
@@ -49,6 +49,10 @@ Page({
           if (res.errno === 0) {
             wx.setStorageSync('token', res.data.token);
             wx.setStorageSync('logtime',Date.now())
+            wx.setStorageSync('userInfo', res.data.userInfo);
+            that.setData({
+              'userInfo.nickname': res.data.userInfo.nickname
+            })
             resolve(res);
           } else {
             reject(res);

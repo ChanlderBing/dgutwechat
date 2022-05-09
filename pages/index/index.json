@@ -5,5 +5,6 @@
     "i-card": "../../iview/card/index",
     "i-collapse": "../../iview/collapse/index",
     "i-collapse-item": "../../iview/collapse-item/index"
+    ,"noData": "../../components/noData"
   }
 }

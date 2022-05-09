@@ -27,7 +27,7 @@
     class="avatar"
     style="background-image: url({{ userInfo.avatarUrl || userInfo.avatar || unlogin_base64 }})"
     open-type="getUserProfile" bindtap="getUserProfile"></button>
-  <view class="margin-top text-df">{{ userInfo.name || userInfo.nickName || '点击获取头像' }}</view>
+  <view class="margin-top text-df">{{ userInfo.nickname || userInfo.nickName || '点击获取头像' }}</view>
 </view>
 
 <view class="cu-list menu card-menu margin-top">

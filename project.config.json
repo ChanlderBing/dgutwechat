@@ -27,9 +27,9 @@
         "uploadWithSourceMap": true,
         "compileHotReLoad": true,
         "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
+        "useMultiFrameRuntime": false,
+        "useApiHook": false,
+        "useApiHostProcess": false,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -44,7 +44,7 @@
         "minifyWXML": true,
         "showES6CompileOption": false,
         "useCompilerPlugins": false,
-        "ignoreUploadUnusedFiles": true
+        "ignoreUploadUnusedFiles": false
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",

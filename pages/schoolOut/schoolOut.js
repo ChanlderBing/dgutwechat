@@ -24,7 +24,7 @@ Page({
     onLoad: function (options) {
         if (wx.getStorageSync('userInfo')) {
             this.setData({
-                'setForm.nickname': wx.getStorageSync('userInfo').nickName,
+                'setForm.nickname': wx.getStorageSync('userInfo').nickname,
             })
         } else {
             // wx.showModal
