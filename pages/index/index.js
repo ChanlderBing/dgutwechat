@@ -50,10 +50,13 @@ Page({
    */
   onShow: function () {
     if (wx.getStorageSync('token')) {
-      console.log(wx.getStorageSync('is_play'));
       this.setData({
         checked: new Date().toLocaleDateString() != wx.getStorageSync('is_play') ? false :true
       }) 
+    }else {
+      this.setData({
+        showModal: true
+      })
     }
   },
   /**
@@ -103,43 +106,22 @@ Page({
       url: `../group/group?class_=${class_}&department=${department}`,
     })
   },
-  register: function () {
-    const that = this
-    
-    app.globalData.userInfo.last_checkin_at = new Date('2020')
-    db.collection('users').add({
-      data: {
-        userInfo: app.globalData.userInfo,
-        time: new Date()
-      },
-      success(res) {
-        console.log(res)
-        app.globalData.userInfo.id = res._id
-        that.setData({
-          userInfo: app.globalData.userInfo
-        })
-        wx.hideLoading()
-      },
-      fail(res) {
-        console.log(res)
-      }
-    })
-  },
+  
   // changeClass(){
   //   // console.log('ss')
   //   wx.navigateTo({
   //     url: '/pages/myClasses/myClasses'
   //   })
   // },
-  // hideModal() {
-  //   this.setData({ showModal: false })
-  // },
-  // navToMyInfo() {
-  //   wx.navigateTo({
-  //     url: '../bind/bind',
-  //   })
-  //   this.hideModal()
-  // },
+  hideModal() {
+    this.setData({ showModal: false })
+  },
+  navToMyInfo() {
+   wx.switchTab({
+     url: '../me/me',
+   })
+    this.hideModal()
+  },
 
 
       // 订阅消息

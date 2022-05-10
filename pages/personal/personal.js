@@ -23,28 +23,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    //   wx.getSystemInfo({
-    //     success: function(res) {
-    //      that.setData({
-    //        clientHight:res.windowHeight
-    //      })
-    //    },
-    //  })
-    if (wx.getStorageSync('token')) {
-      util.request(api.applyCheck,{ page:this.data.pageNum }).then(res =>{
-        if (res.errno === 0) {
-          if (res.data.data.length > 0) {
-            res.data.data.forEach(item=>{
-              return item.applyTime = util.formatTime(new Date(parseInt(item.applyTime)*1000))})
-            this.setData({
-              applyList: res.data.data,
-              counting: res.data.counting,
-              counted: res.data.counted
-            })
-          }
-        }
-      })
-    }
+   
     },
 
     /**
@@ -58,7 +37,21 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      
+      if (wx.getStorageSync('token')) {
+        util.request(api.applyCheck,{ page: 1 }).then(res =>{
+          if (res.errno === 0) {
+            if (res.data.data.length > 0) {
+              res.data.data.forEach(item=>{
+                return item.applyTime = util.formatTime(new Date(parseInt(item.applyTime)*1000))})
+              this.setData({
+                applyList: res.data.data,
+                counting: res.data.counting,
+                counted: res.data.counted
+              })
+            }
+          }
+        })
+      }
     },
 
     /**

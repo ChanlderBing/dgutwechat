@@ -1,20 +1,13 @@
-<!--pages/myInfo.wxml-->
 <form bindsubmit='setMyInfo'>
-  <!-- <picker bindchange='changeType' range="{{ types }}" value="{{ type_index }}"> -->
-<!--   </picker> -->
   <view class='con'>
     <label>学号：</label>
-    <input type='number'  disabled="{{myinfo.schoolId ? true : false }}" value='{{ myinfo.schoolId }}'  maxlength='12' name='schoolId'></input>
+    <input type='number'  value='{{ myinfo.schoolId }}'  maxlength='12' name='schoolId'></input>
   </view>
   <view class='con'>
-    <label>姓名：</label>
-    <input type='text'  disabled="{{myinfo.nickname ? true : false }}" value='{{ myinfo.nickname }}' maxlength='11' name='nickname'></input>
+    <label>绑定密码</label>
+    <input type='password'  value='{{ myinfo.pwd }}'  maxlength='12' name='pwd'></input>
   </view>
-  <view class='con'>
-    <label>班级：</label>
-    <input type='text'  disabled="{{myinfo.class ? true : false }}" value='{{ myinfo.class }}' maxlength='30' name='class'></input>
-  </view>
-  <button form-type='submit' disabled="{{myinfo.schoolId && myinfo.schoolId && myinfo.class ? true : false }}">保存</button>
+  <button form-type='submit'>确认绑定</button>
 </form>
 <view class="mark">
   数据由学校提供

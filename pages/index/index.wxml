@@ -12,11 +12,11 @@
   </view>
 </view>
 <!-- 建议用户绑定信息 -->
-<!-- <i-modal title="未绑定身份" visible="{{ showModal }}" bind:ok="navToMyInfo" bind:cancel="hideModal">
+<i-modal title="未绑定身份" visible="{{ showModal }}" bind:ok="navToMyInfo" bind:cancel="hideModal">
     <view>正确绑定身份后</view>
     <view>您的打卡情况才能被班级/学院统计</view>
     <view>现在去绑定吗？</view>
-</i-modal> -->
+</i-modal>
 <!-- 建议用户绑定信息 End -->
 
 <block>
@@ -25,7 +25,7 @@
     <text class="cuIcon-title text-orange"></text> 学院通知
   </view>
 </view>
-<view class="cu-list menu card-menu margin-top" wx:for="{{inform}}" wx:key="item.id">
+<view class="cu-list menu card-menu margin-top" wx:for="{{inform}}" wx:key="{{item.id}}">
   <view class="cu-item arrow" bindtap="">
     <view class="content sl">
       <text>{{item.title}}</text>
@@ -35,6 +35,9 @@
     </view>
   </view>
 </view>
+<noData wx:if="{{inform == ''}}">
+  <view bindtap='a'>暂无数据</view>
+</noData>
 </block>
 
 <block wx:if="{{ userInfo.type==='辅导员' || userInfo.type==='副院长' }}">

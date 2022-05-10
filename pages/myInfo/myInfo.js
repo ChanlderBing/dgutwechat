@@ -10,10 +10,6 @@ Page({
      */
     data: {
         myinfo:{},
-        yinfo:{
-        a:'什么东西',
-        b:'aaaa'
-        }
     },
 
     /**
@@ -84,15 +80,22 @@ Page({
     },
     setMyInfo(e) {
         util.request(api.Userinfochange, { userInfo: e.detail.value }, 'POST').then(res => {
-          console.log(res);
             if (res.errno === 0) {
               wx.showToast({
-                title: '修改成功',
-                icon: '',   
+                title: '绑定成功',   
                 duration: 2000,      //停留时间
               })
+              setTimeout(()=>{
+                wx.switchTab({
+                  url: '../index/index',
+                })
+              },2000)
             } else {
-              console.log(11);
+              wx.showToast({
+                title: '绑定失败',
+                icon: 'fail',   
+                duration: 2000,      //停留时间
+              })
             }
           }).catch((err) => {
             

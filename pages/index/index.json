@@ -4,7 +4,7 @@
     "i-modal": "../../iview/modal/index",
     "i-card": "../../iview/card/index",
     "i-collapse": "../../iview/collapse/index",
-    "i-collapse-item": "../../iview/collapse-item/index"
-    ,"noData": "../../components/noData"
+    "i-collapse-item": "../../iview/collapse-item/index",
+    "noData": "../../components/nodata/noData"
   }
 }
