@@ -28,12 +28,9 @@ function request(url, data = {}, method = "GET") {
         'X-Nideshop-Token': wx.getStorageSync('token')
       },
       success: function (res) {
-        console.log("success");
-
         if (res.statusCode == 200) {
           if (res.data.errno == 401) {
             //需要登录后才可以操作
-
             let code = null;
             return login().then((res) => {
               code = res.code;
@@ -45,7 +42,6 @@ function request(url, data = {}, method = "GET") {
                   //存储用户信息
                   wx.setStorageSync('userInfo', res.data.userInfo);
                   wx.setStorageSync('token', res.data.token);
-
                   resolve(res);
                 } else {
                   reject(res);
@@ -155,7 +151,6 @@ function getUserProfile() {
 }
 
 function redirect(url) {
-
   //判断页面是否需要登录
   if (false) {
     wx.redirectTo({

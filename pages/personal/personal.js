@@ -125,5 +125,10 @@ Page({
       wx.navigateTo({
         url: '../qrcodeShow/qrcodeShow?id=' + id,
       })
+    },
+    gotoDetail(){
+      wx.navigateTo({
+        url: '../detail/detail',
+      })
     }
 })

@@ -10,12 +10,6 @@ Page({
     userInfo: {},
     hasUserInfo: false
   },
-  // 事件处理函数
-  changeInfo() {
-    wx.navigateTo({
-      url: '../myInfo/myInfo'
-    })
-  },
   onLoad() {
     if (wx.getStorageSync('userInfo')) {
       this.setData({
@@ -71,6 +65,17 @@ Page({
         reject(err);
       })
     });
+  },
+  // 事件处理函数
+  changeInfo() {
+    wx.navigateTo({
+      url: '../auth/auth'
+    })
+  },
+  checkRecord() {
+    wx.navigateTo({
+      url: '../record/record',
+    })
   }
 })
 

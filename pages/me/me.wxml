@@ -38,7 +38,7 @@
   </view>
 </view>
 <view class="cu-list menu card-menu margin-top">
-  <view class="cu-item arrow" bindtap="changeInfo">
+  <view class="cu-item arrow" bindtap="checkRecord">
     <view class="content">
       <text>打卡记录</text>
     </view>

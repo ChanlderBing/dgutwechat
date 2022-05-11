@@ -5,7 +5,7 @@
         <image  class="icon" src="/images/apply.png"></image>
         <text class="title">出校申请</text>
     </view>
-    <view class="list">
+    <view class="list" bindtap="gotoDetail">
         <image class="icon" src="/images/icon-covid.png"></image>
         <text class="title">疫情资讯</text>
     </view>
@@ -28,7 +28,6 @@
     </view>
     <view class="main">
         <view class="mainHead  bg-white">
-            
         </view>
         <view class="mainMain">
             <view class="mainList bg-white"  wx:for="{{applyList}}" wx:key="{{item.id}}">

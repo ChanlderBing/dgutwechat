@@ -1,0 +1,21 @@
+<!--pages/detail/detail.wxml-->
+<view class="head bg-white solid-bottom">
+    <view class="high">
+        <view class="title red">全国风险高风地区数量为{{highDangerCount}}个
+        </view>
+        <view class="title red">全国风险中风地区数量为{{midDangerCount}}个
+        </view>
+        <view class="title">一、高风险地区
+        </view>
+        <view class="list" wx:for="{{ riskareaHigh }}" wx:key="index">
+            <view>{{ item }} </view>
+        </view>
+        <view class="title">二、中风险地区
+        </view>
+        <view class="list" wx:for="{{ riskareaMid}}" wx:key="index">
+            <view>{{ item }} </view>
+        </view>
+        <view class="title">三、低风险地区</view>
+        <view class="list">除了上述地区外的其他地区</view>
+    </view>
+</view>

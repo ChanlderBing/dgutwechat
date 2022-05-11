@@ -1,0 +1,93 @@
+/* pages/detail/detail.wxss */
+page{
+    height: 100%;
+    width: 100vw;
+}
+.all{
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+    width: 100%;
+}
+.head{
+    /* height: 380rpx; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    margin: 30rpx 16rpx;
+    border-radius: 30rpx;
+}
+.high{
+    display: flex;
+    flex-direction: column;
+    /* height: 380rpx; */
+    flex: 1;
+    overflow: scroll;
+}
+.mid{
+    height: 130rpx;
+    margin-bottom: 30rpx;
+    width: 100%;
+    display: flex;
+    border-radius: 30rpx;
+}
+.applyList{
+    height: 130rpx;
+    width: 50%;
+}
+.textapply{
+    position: relative;
+    top: 35%;
+    left: 10%;
+    font-size: 30rpx;
+    font: gray;
+}
+.numapply {
+    position: relative;
+    top: 35%;
+    left: 22%;
+    font-weight: bold;
+    font-size: 32rpx;
+}
+.main{
+    flex: 1;
+    /* margin: 0 30rpx; */
+    border-radius: 30rpx;
+}
+.list {
+    margin: 16rpx 0 20rpx 48rpx;
+}
+.icon {
+    width: 100rpx;
+    height: 100rpx;
+}
+.title {
+    padding: 16rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+}
+.mainList{
+    height: 180rpx;
+    margin: 10rpx 0rpx;
+    border-radius: 30rpx;
+    display: flex;
+}
+.mainListIcon {
+    margin: 20rpx 20rpx;
+    width: 18%;
+}
+.mainListDetail{
+    width: 63%;
+}
+.mainListStatus{
+    width: 18%;
+}
+.reason {
+    display: flex;
+}
+.reasonsl{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

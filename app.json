@@ -7,7 +7,10 @@
         "pages/inform/inform",
         "pages/schoolOut/schoolOut",
         "pages/qrcodeShow/qrcodeShow",
-        "pages/personal/personal"
+        "pages/personal/personal",
+        "pages/detail/detail",
+        "pages/auth/auth",
+        "pages/record/record"
     ],
     "tabBar": {
         "list": [

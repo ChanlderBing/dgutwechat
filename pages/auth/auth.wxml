@@ -1,0 +1,17 @@
+<view class='con'>
+    <label>学号：</label>
+    <input  value='{{ myinfo.schoolId }}'   name='schoolId'></input>
+  </view>
+  <view class='con'>
+    <label>学院:</label>
+    <input  value='{{ myinfo.class }}'  name='pwd'></input>
+  </view>
+  <view class='con'>
+    <label>姓名:</label>
+    <input  value='{{ myinfo.nickname }}'  name='pwd'></input>
+  </view>
+  <view class='con'>
+    <label>联系方式:</label>
+    <input  value='{{ myinfo.mobile }}'  name='pwd'></input>
+  </view>
+
