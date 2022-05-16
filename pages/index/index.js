@@ -25,6 +25,8 @@ Page({
 
     util.request(SchoolInformCheck).then(res =>{
       if (res.errno === 0) {
+        res.data.forEach(item=>{
+          return item.informTime = util.formatTime(new Date(parseInt(item.informTime)*1000))})
         this.setData({
           inform: res.data
         })

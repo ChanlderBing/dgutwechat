@@ -51,7 +51,7 @@
             </view>
             <i-spin custom  wx:if="{{isMore}}">加载中...</i-spin>
             <i-load-more tip="没有更多数据"  wx:if="{{noMore}}" loading="{{ false }}" />
-            <noData wx:if="{{!applyList}}">
+            <noData wx:if="!{{applyList}}">
              <view>暂无数据</view>
             </noData>   
         </view>

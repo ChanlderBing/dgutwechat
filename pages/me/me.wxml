@@ -44,13 +44,9 @@
     </view>
   </view>
 </view>
-<view class="cu-list menu card-menu margin-top">
-  <view class="cu-item arrow" bindtap="changeInfo">
-    <view class="content">
-      <text>学号解绑</text>
-    </view>
-  </view>
-</view>
+<!-- <view class="cu-bar btn-group margin-top margin-bottom" >
+  <button class="cu-btn bg-green lg" bindtap="logout" wx:if="{{userInfo}}">退出登录</button>
+</view> -->
 
 <view class="mark">
   <view>每个微信号仅能绑定一人身份</view>

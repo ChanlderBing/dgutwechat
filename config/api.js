@@ -1,4 +1,4 @@
-const ApiRootUrl = 'http://127.0.0.1:8360/api/';
+const ApiRootUrl = 'http://192.168.106.1:8360/api/';
 
 module.exports = {
   IndexUrl: ApiRootUrl + 'index/index', //首页数据接口
@@ -16,5 +16,6 @@ module.exports = {
   qrcodeCheck:ApiRootUrl + 'auth/qrcodeCheck',
   qrcodeExprieCheck:ApiRootUrl + 'auth/qrcodeExprieCheck',
   applyCheck:ApiRootUrl + 'auth/applyCheck',
-  playRecord: ApiRootUrl + 'auth/playRecord'
+  playRecord: ApiRootUrl + 'auth/playRecord',
+  logout: ApiRootUrl + 'auth/logout'
 };

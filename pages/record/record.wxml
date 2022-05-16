@@ -1,15 +1,15 @@
 <!--pages/record/record.wxml-->
 <view class="cu-list menu card-menu margin-top">
-  <view class="cu-item arrow" bindtap="changeInfo">
+  <view class="cu-item " >
     <view class="content">
-      <text>个人信息</text>
+      <text>打卡记录</text>
     </view>
   </view>
 </view>
 <view class="head bg-white solid-bottom">
-   <view class="list">
-   <view class="time"></view>
-   <view class="schoolId"></view>
+   <view class="list" wx:for="{{record}}" wx:key="{{index}}">
+   <view class="time">{{item.play_time}}</view>
+   <view class="schoolId">{{item.schoolId}} 陈炫华</view>
    </view>
    <view class="list"></view>
 </view>

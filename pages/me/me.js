@@ -41,12 +41,14 @@ Page({
         //登录远程服务器
         util.request(api.AuthLoginByWeixin, { code: code, userInfo: res }, 'POST').then(res => {
           if (res.errno === 0 && res.data.userInfo.schoolId) {
-            wx.setStorageSync('token', res.data.token);
-            wx.setStorageSync('logtime',Date.now())
-            wx.setStorageSync('userInfo', res.data.userInfo);
+            res.data.userInfo.avatar = that.data.userInfo.avatarUrl
             that.setData({
               'userInfo.nickname': res.data.userInfo.nickname
             })
+            wx.setStorageSync('token', res.data.token);
+            wx.setStorageSync('logtime',Date.now())
+            wx.setStorageSync('userInfo', res.data.userInfo);
+            
             resolve(res);
           } else {
             wx.setStorageSync('token', res.data.token);
@@ -76,6 +78,13 @@ Page({
     wx.navigateTo({
       url: '../record/record',
     })
+  },
+  logout(){
+    this.setData({
+      userInfo:'',
+    })
+    wx.removeStorageSync('token')
+    wx.removeStorageSync('userInfo')
   }
 })
 

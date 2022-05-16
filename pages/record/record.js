@@ -21,16 +21,22 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        util.get(api.playRecord).then(res=>{
+            if (res.errno === 0) {
+                res.data.forEach(item=>{
+                    return item.play_time = util.formatTime(new Date(parseInt(item.play_time)*1000))})
+                this.setData({
+                    record: res.data,
+                })
+            }
+        })
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        util.get(api.playRecord).then(res=>{
-            console.log(res);
-        })
+       
     },
 
     /**

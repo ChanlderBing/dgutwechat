@@ -83,13 +83,11 @@ Page({
     },
     draw(qrcodeId) {
         let way = this.data.way
-        console.log(this.data.way);
         drawQrcode({
             width: 200,
             height: 200,
             canvasId: 'myQrcode',
-            // ctx: wx.createCanvasContext('myQrcode'),
-            text: `http://192.168.1.7:8360/api/auth/${way}?qrcodeId=${qrcodeId}`,
+            text: `http://192.168.1.8:8360/api/auth/${way}?qrcodeId=${qrcodeId}`,
         })
     }
 })
